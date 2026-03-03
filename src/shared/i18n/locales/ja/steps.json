@@ -1,0 +1,43 @@
+{
+  "indicator": {
+    "default": ["開始", "確認", "インストール", "完了"]
+  },
+  "welcome": {
+    "title": "Claude Codeを",
+    "titleHighlight": "ワンクリックでインストール",
+    "subtitle": "AnthropicのAIコーディングアシスタントを簡単にインストール",
+    "button": "始める"
+  },
+  "envCheck": {
+    "title": "環境確認",
+    "subtitle": "インストールに必要な環境を確認します",
+    "os": "オペレーティングシステム",
+    "claudeCode": "Claude Code",
+    "git": "Git for Windows",
+    "alreadyInstalled": "Claude Codeはすでにインストールされています！",
+    "version": "バージョン: {{version}}",
+    "needInstall": "インストールが必要です",
+    "needGit": "Git for Windowsのインストールが必要です",
+    "ready": "インストール準備完了"
+  },
+  "install": {
+    "title": "Claude Codeのインストール",
+    "subtitle": "インストール中です。しばらくお待ちください。",
+    "installingGit": "Git for Windowsをインストール中...",
+    "installingClaude": "Claude Codeをインストール中...",
+    "complete": "インストールが完了しました！",
+    "failed": "インストールに失敗しました",
+    "failedDetail": "エラー: {{error}}",
+    "logViewer": {
+      "waiting": "インストールログを待機中..."
+    }
+  },
+  "done": {
+    "title": "インストール完了！",
+    "subtitle": "Claude Codeが正常にインストールされました",
+    "howToUse": "使い方",
+    "terminalHint": "ターミナルを開いて以下のコマンドを入力してください",
+    "docsLink": "Claude Codeドキュメントを見る",
+    "docsUrl": "https://docs.anthropic.com/en/docs/claude-code"
+  }
+}

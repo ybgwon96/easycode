@@ -1,0 +1,29 @@
+{
+  "app": {
+    "name": "EasyCode",
+    "description": "Claude Code 一键安装程序"
+  },
+  "button": {
+    "next": "下一步",
+    "back": "返回",
+    "start": "开始",
+    "install": "安装",
+    "retry": "重试",
+    "done": "完成",
+    "close": "关闭"
+  },
+  "status": {
+    "checking": "检查中...",
+    "installing": "安装中...",
+    "installed": "已安装",
+    "notInstalled": "未安装",
+    "success": "成功",
+    "error": "错误"
+  },
+  "language": {
+    "ko": "한국어",
+    "en": "English",
+    "ja": "日本語",
+    "zh": "中文"
+  }
+}

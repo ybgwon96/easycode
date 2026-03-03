@@ -1,0 +1,182 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-primary: #da7756;
+  --color-primary-hover: #c4643f;
+  --color-primary-light: #e8a88e;
+  --color-primary-glow: rgba(218, 119, 86, 0.35);
+  --color-bg: #1a1714;
+  --color-bg-card: rgba(255, 245, 235, 0.05);
+  --color-bg-card-hover: rgba(255, 245, 235, 0.08);
+  --color-bg-input: rgba(255, 245, 235, 0.07);
+  --color-glass-border: rgba(255, 245, 235, 0.1);
+  --color-text: #f5ede6;
+  --color-text-muted: #9e8e82;
+  --color-success: #34d399;
+  --color-error: #fb7185;
+  --color-warning: #fbbf24;
+  --color-accent-peach: #f5c0a0;
+  --color-accent-cream: #f5e6d3;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family:
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Hiragino Kaku Gothic ProN',
+    'Yu Gothic',
+    'Meiryo',
+    sans-serif;
+  -webkit-app-region: drag;
+  user-select: none;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input,
+button,
+textarea,
+a,
+select {
+  -webkit-app-region: no-drag;
+  font-family: inherit;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Aurora background - warm orange-brown tones */
+.aurora-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(218, 119, 86, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(196, 100, 63, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(245, 192, 160, 0.05) 0%, transparent 60%),
+    var(--color-bg);
+  animation: aurora-shift 12s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-shift {
+  0% {
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  100% {
+    filter: hue-rotate(10deg) brightness(1.05);
+  }
+}
+
+/* Grain overlay */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px;
+}
+
+/* Glass card */
+.glass-card {
+  background: var(--color-bg-card);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--color-glass-border);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: var(--color-bg-card-hover);
+  border-color: rgba(255, 245, 235, 0.15);
+  transform: translateY(-1px);
+}
+
+/* Floating bubbles */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(218, 119, 86, 0.15),
+    rgba(218, 119, 86, 0.03)
+  );
+  animation: bubble-float linear infinite;
+  pointer-events: none;
+}
+
+@keyframes bubble-float {
+  0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Step transitions */
+.step-enter {
+  animation: step-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes step-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Glow pulse for status dots */
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 4px currentColor;
+  }
+  50% {
+    box-shadow:
+      0 0 12px currentColor,
+      0 0 24px currentColor;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 245, 235, 0.1);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 245, 235, 0.2);
+}

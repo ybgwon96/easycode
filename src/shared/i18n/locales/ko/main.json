@@ -1,0 +1,8 @@
+{
+  "installer": {
+    "installingClaudeCode": "Claude Code 설치 중...",
+    "claudeCodeDone": "Claude Code 설치 완료!",
+    "installingGit": "Git for Windows 설치 중...",
+    "gitDone": "Git for Windows 설치 완료!"
+  }
+}

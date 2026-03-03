@@ -1,0 +1,43 @@
+{
+  "indicator": {
+    "default": ["开始", "检查", "安装", "完成"]
+  },
+  "welcome": {
+    "title": "一键安装",
+    "titleHighlight": "Claude Code",
+    "subtitle": "轻松安装 Anthropic 的 AI 编程助手",
+    "button": "开始"
+  },
+  "envCheck": {
+    "title": "环境检查",
+    "subtitle": "检查安装所需的系统环境",
+    "os": "操作系统",
+    "claudeCode": "Claude Code",
+    "git": "Git for Windows",
+    "alreadyInstalled": "Claude Code 已经安装！",
+    "version": "版本: {{version}}",
+    "needInstall": "需要安装",
+    "needGit": "需要安装 Git for Windows",
+    "ready": "准备安装"
+  },
+  "install": {
+    "title": "安装 Claude Code",
+    "subtitle": "正在安装中，请稍候。",
+    "installingGit": "正在安装 Git for Windows...",
+    "installingClaude": "正在安装 Claude Code...",
+    "complete": "安装完成！",
+    "failed": "安装失败",
+    "failedDetail": "错误: {{error}}",
+    "logViewer": {
+      "waiting": "等待安装日志..."
+    }
+  },
+  "done": {
+    "title": "安装完成！",
+    "subtitle": "Claude Code 已成功安装",
+    "howToUse": "使用方法",
+    "terminalHint": "打开终端并输入以下命令",
+    "docsLink": "查看 Claude Code 文档",
+    "docsUrl": "https://docs.anthropic.com/en/docs/claude-code"
+  }
+}

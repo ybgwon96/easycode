@@ -1,0 +1,8 @@
+{
+  "installer": {
+    "installingClaudeCode": "Claude Codeをインストール中...",
+    "claudeCodeDone": "Claude Codeのインストール完了！",
+    "installingGit": "Git for Windowsをインストール中...",
+    "gitDone": "Git for Windowsのインストール完了！"
+  }
+}

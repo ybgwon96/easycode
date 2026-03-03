@@ -1,0 +1,29 @@
+{
+  "app": {
+    "name": "EasyCode",
+    "description": "One-click Claude Code installer"
+  },
+  "button": {
+    "next": "Next",
+    "back": "Back",
+    "start": "Get Started",
+    "install": "Install",
+    "retry": "Retry",
+    "done": "Done",
+    "close": "Close"
+  },
+  "status": {
+    "checking": "Checking...",
+    "installing": "Installing...",
+    "installed": "Installed",
+    "notInstalled": "Not Installed",
+    "success": "Success",
+    "error": "Error"
+  },
+  "language": {
+    "ko": "한국어",
+    "en": "English",
+    "ja": "日本語",
+    "zh": "中文"
+  }
+}

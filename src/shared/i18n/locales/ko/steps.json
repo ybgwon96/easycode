@@ -1,0 +1,43 @@
+{
+  "indicator": {
+    "default": ["시작", "환경 확인", "설치", "완료"]
+  },
+  "welcome": {
+    "title": "Claude Code를",
+    "titleHighlight": "원클릭으로 설치하세요",
+    "subtitle": "Anthropic의 AI 코딩 어시스턴트를 쉽게 설치하세요",
+    "button": "시작하기"
+  },
+  "envCheck": {
+    "title": "환경 확인",
+    "subtitle": "설치에 필요한 환경을 확인합니다",
+    "os": "운영체제",
+    "claudeCode": "Claude Code",
+    "git": "Git for Windows",
+    "alreadyInstalled": "Claude Code가 이미 설치되어 있습니다!",
+    "version": "버전: {{version}}",
+    "needInstall": "설치가 필요합니다",
+    "needGit": "Git for Windows 설치가 필요합니다",
+    "ready": "설치 준비 완료"
+  },
+  "install": {
+    "title": "Claude Code 설치",
+    "subtitle": "설치가 진행 중입니다. 잠시 기다려 주세요.",
+    "installingGit": "Git for Windows 설치 중...",
+    "installingClaude": "Claude Code 설치 중...",
+    "complete": "설치가 완료되었습니다!",
+    "failed": "설치에 실패했습니다",
+    "failedDetail": "오류: {{error}}",
+    "logViewer": {
+      "waiting": "설치 로그를 기다리는 중..."
+    }
+  },
+  "done": {
+    "title": "설치 완료!",
+    "subtitle": "Claude Code가 성공적으로 설치되었습니다",
+    "howToUse": "사용 방법",
+    "terminalHint": "터미널을 열고 아래 명령어를 입력하세요",
+    "docsLink": "Claude Code 문서 보기",
+    "docsUrl": "https://docs.anthropic.com/en/docs/claude-code"
+  }
+}

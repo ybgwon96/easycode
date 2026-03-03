@@ -1,0 +1,43 @@
+{
+  "indicator": {
+    "default": ["Start", "Check", "Install", "Done"]
+  },
+  "welcome": {
+    "title": "Install Claude Code",
+    "titleHighlight": "with one click",
+    "subtitle": "Easily install Anthropic's AI coding assistant",
+    "button": "Get Started"
+  },
+  "envCheck": {
+    "title": "Environment Check",
+    "subtitle": "Checking your system requirements",
+    "os": "Operating System",
+    "claudeCode": "Claude Code",
+    "git": "Git for Windows",
+    "alreadyInstalled": "Claude Code is already installed!",
+    "version": "Version: {{version}}",
+    "needInstall": "Installation required",
+    "needGit": "Git for Windows is required",
+    "ready": "Ready to install"
+  },
+  "install": {
+    "title": "Installing Claude Code",
+    "subtitle": "Installation is in progress. Please wait.",
+    "installingGit": "Installing Git for Windows...",
+    "installingClaude": "Installing Claude Code...",
+    "complete": "Installation complete!",
+    "failed": "Installation failed",
+    "failedDetail": "Error: {{error}}",
+    "logViewer": {
+      "waiting": "Waiting for installation logs..."
+    }
+  },
+  "done": {
+    "title": "Installation Complete!",
+    "subtitle": "Claude Code has been successfully installed",
+    "howToUse": "How to Use",
+    "terminalHint": "Open your terminal and type the command below",
+    "docsLink": "View Claude Code Documentation",
+    "docsUrl": "https://docs.anthropic.com/en/docs/claude-code"
+  }
+}

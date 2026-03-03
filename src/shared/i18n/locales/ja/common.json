@@ -1,0 +1,29 @@
+{
+  "app": {
+    "name": "EasyCode",
+    "description": "Claude Code ワンクリックインストーラー"
+  },
+  "button": {
+    "next": "次へ",
+    "back": "戻る",
+    "start": "始める",
+    "install": "インストール",
+    "retry": "再試行",
+    "done": "完了",
+    "close": "閉じる"
+  },
+  "status": {
+    "checking": "確認中...",
+    "installing": "インストール中...",
+    "installed": "インストール済み",
+    "notInstalled": "未インストール",
+    "success": "成功",
+    "error": "エラー"
+  },
+  "language": {
+    "ko": "한국어",
+    "en": "English",
+    "ja": "日本語",
+    "zh": "中文"
+  }
+}

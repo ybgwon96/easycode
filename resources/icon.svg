@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a1f1a"/>
+      <stop offset="100%" stop-color="#1a1714"/>
+    </linearGradient>
+    <linearGradient id="spark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8a88e"/>
+      <stop offset="50%" stop-color="#da7756"/>
+      <stop offset="100%" stop-color="#c4643f"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded square background -->
+  <rect width="512" height="512" rx="108" fill="url(#bg)"/>
+
+  <!-- Subtle inner glow -->
+  <rect width="512" height="512" rx="108" fill="none" stroke="rgba(218,119,86,0.15)" stroke-width="2"/>
+
+  <!-- Code brackets < > -->
+  <path d="M148 200 L100 256 L148 312" fill="none" stroke="url(#spark)" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+  <path d="M364 200 L412 256 L364 312" fill="none" stroke="url(#spark)" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+
+  <!-- Central 4-pointed star/sparkle (original design - asymmetric) -->
+  <path d="M256 130 C262 200, 290 228, 360 240 C290 252, 262 280, 256 350 C250 280, 222 252, 152 240 C222 228, 250 200, 256 130Z" fill="url(#spark)"/>
+
+  <!-- Small sparkle accent top-right -->
+  <path d="M370 120 C372 140, 380 148, 400 150 C380 152, 372 160, 370 180 C368 160, 360 152, 340 150 C360 148, 368 140, 370 120Z" fill="#e8a88e" opacity="0.6"/>
+
+  <!-- Download arrow at bottom -->
+  <path d="M256 370 L256 420 M230 400 L256 426 L282 400" fill="none" stroke="url(#spark)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+</svg>

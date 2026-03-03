@@ -1,0 +1,8 @@
+{
+  "installer": {
+    "installingClaudeCode": "Installing Claude Code...",
+    "claudeCodeDone": "Claude Code installation complete!",
+    "installingGit": "Installing Git for Windows...",
+    "gitDone": "Git for Windows installation complete!"
+  }
+}

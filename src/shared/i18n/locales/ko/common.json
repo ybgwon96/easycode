@@ -1,0 +1,29 @@
+{
+  "app": {
+    "name": "EasyCode",
+    "description": "Claude Code 원클릭 설치 프로그램"
+  },
+  "button": {
+    "next": "다음",
+    "back": "이전",
+    "start": "시작하기",
+    "install": "설치하기",
+    "retry": "다시 시도",
+    "done": "완료",
+    "close": "닫기"
+  },
+  "status": {
+    "checking": "확인 중...",
+    "installing": "설치 중...",
+    "installed": "설치됨",
+    "notInstalled": "미설치",
+    "success": "성공",
+    "error": "오류"
+  },
+  "language": {
+    "ko": "한국어",
+    "en": "English",
+    "ja": "日本語",
+    "zh": "中文"
+  }
+}
