@@ -1,32 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#2a1f1a"/>
-      <stop offset="100%" stop-color="#1a1714"/>
+      <stop offset="0%" stop-color="#ec9462"/>
+      <stop offset="100%" stop-color="#da7756"/>
     </linearGradient>
-    <linearGradient id="spark" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#e8a88e"/>
-      <stop offset="50%" stop-color="#da7756"/>
-      <stop offset="100%" stop-color="#c4643f"/>
-    </linearGradient>
+    <clipPath id="termClip">
+      <rect x="72" y="72" width="368" height="368" rx="40"/>
+    </clipPath>
   </defs>
 
-  <!-- Rounded square background -->
+  <!-- Background -->
   <rect width="512" height="512" rx="108" fill="url(#bg)"/>
 
-  <!-- Subtle inner glow -->
-  <rect width="512" height="512" rx="108" fill="none" stroke="rgba(218,119,86,0.15)" stroke-width="2"/>
+  <!-- Terminal body (dark content area) -->
+  <rect x="72" y="72" width="368" height="368" rx="40" fill="#141210"
+        stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/>
 
-  <!-- Code brackets < > -->
-  <path d="M148 200 L100 256 L148 312" fill="none" stroke="url(#spark)" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
-  <path d="M364 200 L412 256 L364 312" fill="none" stroke="url(#spark)" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+  <!-- Title bar (white, clipped to terminal shape) -->
+  <rect x="72" y="72" width="368" height="56" fill="#e8e4e0"
+        clip-path="url(#termClip)"/>
 
-  <!-- Central 4-pointed star/sparkle (original design - asymmetric) -->
-  <path d="M256 130 C262 200, 290 228, 360 240 C290 252, 262 280, 256 350 C250 280, 222 252, 152 240 C222 228, 250 200, 256 130Z" fill="url(#spark)"/>
+  <!-- Window dots -->
+  <circle cx="118" cy="100" r="10" fill="#fb7185"/>
+  <circle cx="150" cy="100" r="10" fill="#fbbf24"/>
+  <circle cx="182" cy="100" r="10" fill="#34d399"/>
 
-  <!-- Small sparkle accent top-right -->
-  <path d="M370 120 C372 140, 380 148, 400 150 C380 152, 372 160, 370 180 C368 160, 360 152, 340 150 C360 148, 368 140, 370 120Z" fill="#e8a88e" opacity="0.6"/>
-
-  <!-- Download arrow at bottom -->
-  <path d="M256 370 L256 420 M230 400 L256 426 L282 400" fill="none" stroke="url(#spark)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+  <!-- >_ prompt (> is eye, _ is mouth) -->
+  <path d="M150 190 L196 236 L150 282"
+        fill="none" stroke="#f5ede6" stroke-width="18"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="216" y1="345" x2="296" y2="345"
+        stroke="#f5ede6" stroke-width="14"
+        stroke-linecap="round"/>
 </svg>

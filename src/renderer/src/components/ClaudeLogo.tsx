@@ -14,18 +14,11 @@ export default function ClaudeLogo({
     error: 'animate-[shake_0.5s_ease-in-out_infinite]'
   }[state]
 
-  const fillColor = {
-    idle: '#da7756',
-    loading: '#da7756',
+  const promptColor = {
+    idle: '#f5ede6',
+    loading: '#f5ede6',
     success: '#34d399',
     error: '#fb7185'
-  }[state]
-
-  const strokeColor = {
-    idle: '#e8a88e',
-    loading: '#e8a88e',
-    success: '#6ee7b7',
-    error: '#fda4af'
   }[state]
 
   return (
@@ -39,36 +32,33 @@ export default function ClaudeLogo({
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Code brackets < > */}
+        {/* Terminal body */}
+        <rect x="8" y="8" width="64" height="64" rx="10" fill="#141210" />
+        {/* Title bar */}
+        <rect x="8" y="8" width="64" height="12" rx="10" fill="#e8e4e0" />
+        <rect x="8" y="14" width="64" height="6" fill="#e8e4e0" />
+        {/* Window dots */}
+        <circle cx="17" cy="14" r="2.2" fill="#fb7185" />
+        <circle cx="23.5" cy="14" r="2.2" fill="#fbbf24" />
+        <circle cx="30" cy="14" r="2.2" fill="#34d399" />
+        {/* > prompt (eye position) */}
         <path
-          d="M22 28 L10 40 L22 52"
+          d="M23 30 L32 38 L23 46"
           fill="none"
-          stroke={strokeColor}
-          strokeWidth="4"
+          stroke={promptColor}
+          strokeWidth="3.5"
           strokeLinecap="round"
           strokeLinejoin="round"
-          opacity="0.6"
         />
-        <path
-          d="M58 28 L70 40 L58 52"
-          fill="none"
-          stroke={strokeColor}
-          strokeWidth="4"
+        {/* _ cursor (mouth position) */}
+        <line
+          x1="36"
+          y1="56"
+          x2="52"
+          y2="56"
+          stroke={promptColor}
+          strokeWidth="3"
           strokeLinecap="round"
-          strokeLinejoin="round"
-          opacity="0.6"
-        />
-        {/* Central sparkle */}
-        <path
-          d="M40 14 C42 28, 52 38, 66 40 C52 42, 42 52, 40 66 C38 52, 28 42, 14 40 C28 38, 38 28, 40 14Z"
-          fill={fillColor}
-          opacity="0.9"
-        />
-        {/* Small accent sparkle */}
-        <path
-          d="M60 16 C61 22, 64 25, 70 26 C64 27, 61 30, 60 36 C59 30, 56 27, 50 26 C56 25, 59 22, 60 16Z"
-          fill={fillColor}
-          opacity="0.4"
         />
       </svg>
       <style>{`
