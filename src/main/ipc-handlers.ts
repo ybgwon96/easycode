@@ -1,5 +1,6 @@
 import { ipcMain, BrowserWindow, app } from 'electron'
 import { existsSync, readFileSync, writeFileSync } from 'fs'
+import { exec, execFile } from 'child_process'
 import { join } from 'path'
 import i18nMain, { initI18nMain } from '../shared/i18n/main'
 import { checkEnvironment } from './services/env-checker'
@@ -87,6 +88,19 @@ export const registerIpcHandlers = (getWin: () => BrowserWindow | null): void =>
 
   ipcMain.handle('update:install', () => {
     installUpdate()
+    return { success: true }
+  })
+
+  // 터미널 열기
+  ipcMain.handle('shell:open-terminal', () => {
+    if (process.platform === 'darwin') {
+      execFile('open', ['-a', 'Terminal'])
+    } else {
+      // Windows Terminal이 있으면 우선 사용, 없으면 cmd
+      exec('where wt', (err) => {
+        exec(err ? 'cmd /c start cmd' : 'wt')
+      })
+    }
     return { success: true }
   })
 

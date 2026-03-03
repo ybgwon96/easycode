@@ -23,6 +23,9 @@ interface ElectronAPI {
     onDownloaded: (cb: () => void) => () => void
     onError: (cb: (msg: string) => void) => () => void
   }
+  shell: {
+    openTerminal: () => Promise<{ success: boolean }>
+  }
   i18n: {
     getLocale: () => Promise<string>
     setLanguage: (lng: string) => Promise<{ success: boolean; error?: string }>

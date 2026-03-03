@@ -37,7 +37,6 @@
     "subtitle": "Claude Codeが正常にインストールされました",
     "howToUse": "使い方",
     "terminalHint": "ターミナルを開いて以下のコマンドを入力してください",
-    "docsLink": "Claude Codeドキュメントを見る",
-    "docsUrl": "https://docs.anthropic.com/en/docs/claude-code"
+    "openTerminal": "ターミナルを開く"
   }
 }

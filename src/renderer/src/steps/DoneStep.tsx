@@ -23,13 +23,13 @@ export default function DoneStep(): React.JSX.Element {
         </div>
       </div>
 
-      {/* Docs link */}
-      <a
-        href={t('done.docsUrl')}
-        className="text-sm text-primary hover:text-primary-light transition-colors font-semibold"
+      {/* Open terminal button */}
+      <button
+        onClick={() => window.electronAPI.shell.openTerminal()}
+        className="text-sm text-primary hover:text-primary-light transition-colors font-semibold cursor-pointer"
       >
-        {t('done.docsLink')} →
-      </a>
+        {t('done.openTerminal')} →
+      </button>
     </div>
   )
 }

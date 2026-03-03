@@ -50,6 +50,9 @@ const electronAPI = {
       return () => ipcRenderer.removeListener('update:error', handler)
     }
   },
+  shell: {
+    openTerminal: (): Promise<{ success: boolean }> => ipcRenderer.invoke('shell:open-terminal')
+  },
   i18n: {
     getLocale: (): Promise<string> => ipcRenderer.invoke('i18n:get-locale'),
     setLanguage: (lng: string): Promise<{ success: boolean }> =>

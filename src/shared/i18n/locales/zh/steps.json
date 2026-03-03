@@ -37,7 +37,6 @@
     "subtitle": "Claude Code 已成功安装",
     "howToUse": "使用方法",
     "terminalHint": "打开终端并输入以下命令",
-    "docsLink": "查看 Claude Code 文档",
-    "docsUrl": "https://docs.anthropic.com/en/docs/claude-code"
+    "openTerminal": "打开终端"
   }
 }

@@ -43,6 +43,19 @@ function createWindow(): void {
     return { action: 'deny' }
   })
 
+  // 외부 URL 네비게이션을 시스템 브라우저로 열기
+  mainWindow.webContents.on('will-navigate', (event, url) => {
+    try {
+      const parsed = new URL(url)
+      if (parsed.protocol === 'https:' || parsed.protocol === 'http:') {
+        event.preventDefault()
+        shell.openExternal(url)
+      }
+    } catch {
+      /* invalid URL */
+    }
+  })
+
   if (!ipcRegistered) {
     registerIpcHandlers(getWin)
     ipcRegistered = true
