@@ -1,6 +1,6 @@
 {
   "name": "easy-code",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "One-click installer for Claude Code CLI",
   "license": "MIT",
   "main": "./out/main/index.js",
