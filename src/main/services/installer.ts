@@ -42,6 +42,14 @@ const runShell = (
     proc.on('error', reject)
   })
 
+const runPowerShell = (win: BrowserWindow, command: string): Promise<void> =>
+  runShell(
+    win,
+    'powershell',
+    ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-Command', `[Console]::OutputEncoding = [System.Text.Encoding]::UTF8; ${command}`],
+    { shell: false }
+  )
+
 export const installClaudeCode = async (win: BrowserWindow): Promise<void> => {
   const os = platform()
 
@@ -50,28 +58,14 @@ export const installClaudeCode = async (win: BrowserWindow): Promise<void> => {
     await runShell(win, 'bash', ['-c', 'curl -fsSL https://claude.ai/install.sh | bash'])
     progress(win, 'Claude Code installation complete!')
   } else {
-    // Windows: PowerShell native installer
     progress(win, 'Installing Claude Code via native installer...')
-    await runShell(win, 'powershell', [
-      '-NoProfile',
-      '-ExecutionPolicy',
-      'Bypass',
-      '-Command',
-      'irm https://claude.ai/install.ps1 | iex'
-    ])
+    await runPowerShell(win, 'irm https://claude.ai/install.ps1 | iex')
     progress(win, 'Claude Code installation complete!')
   }
 }
 
 export const installGitWindows = async (win: BrowserWindow): Promise<void> => {
   progress(win, 'Installing Git for Windows via winget...')
-  await runShell(win, 'winget', [
-    'install',
-    '--id',
-    'Git.Git',
-    '-e',
-    '--accept-source-agreements',
-    '--accept-package-agreements'
-  ])
+  await runPowerShell(win, 'winget install --id Git.Git -e --accept-source-agreements --accept-package-agreements')
   progress(win, 'Git for Windows installation complete!')
 }
