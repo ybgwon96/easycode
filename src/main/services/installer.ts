@@ -1,6 +1,8 @@
 import { spawn } from 'child_process'
+import { readFile, writeFile } from 'fs/promises'
+import { homedir, platform } from 'os'
+import { join } from 'path'
 import { BrowserWindow } from 'electron'
-import { platform } from 'os'
 
 const send = (win: BrowserWindow, channel: string, msg: string): void => {
   try {
@@ -50,12 +52,31 @@ const runPowerShell = (win: BrowserWindow, command: string): Promise<void> =>
     { shell: false }
   )
 
+const ensureZshPath = async (win: BrowserWindow): Promise<void> => {
+  const claudeBinDir = join(homedir(), '.local', 'bin')
+  const zshrcPath = join(homedir(), '.zshrc')
+  const pathLine = `export PATH="$HOME/.local/bin:$PATH"`
+
+  try {
+    const content = await readFile(zshrcPath, 'utf-8').catch(() => '')
+    if (content.includes('.local/bin')) {
+      progress(win, 'PATH already configured in .zshrc')
+      return
+    }
+    await writeFile(zshrcPath, content + (content.endsWith('\n') ? '' : '\n') + pathLine + '\n')
+    progress(win, 'Added ~/.local/bin to PATH in .zshrc')
+  } catch {
+    progress(win, `Add ${claudeBinDir} to your PATH manually if needed`)
+  }
+}
+
 export const installClaudeCode = async (win: BrowserWindow): Promise<void> => {
   const os = platform()
 
   if (os === 'darwin') {
     progress(win, 'Installing Claude Code via native installer...')
     await runShell(win, 'bash', ['-c', 'curl -fsSL https://claude.ai/install.sh | bash'])
+    await ensureZshPath(win)
     progress(win, 'Claude Code installation complete!')
   } else {
     progress(win, 'Installing Claude Code via native installer...')

@@ -36,7 +36,7 @@
     "title": "설치 완료!",
     "subtitle": "Claude Code가 성공적으로 설치되었습니다",
     "howToUse": "사용 방법",
-    "terminalHint": "터미널을 열고 아래 명령어를 입력하세요",
+    "terminalHint": "새 터미널 창을 열고 아래 명령어를 입력하세요",
     "openTerminal": "터미널 열기"
   }
 }

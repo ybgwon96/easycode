@@ -36,7 +36,7 @@
     "title": "Installation Complete!",
     "subtitle": "Claude Code has been successfully installed",
     "howToUse": "How to Use",
-    "terminalHint": "Open your terminal and type the command below",
+    "terminalHint": "Open a new terminal window and type the command below",
     "openTerminal": "Open Terminal"
   }
 }
