@@ -52,6 +52,27 @@ const runPowerShell = (win: BrowserWindow, command: string): Promise<void> =>
     { shell: false }
   )
 
+const ensureWindowsPath = async (win: BrowserWindow): Promise<void> => {
+  const claudeBinDir = join(homedir(), '.local', 'bin')
+  const pathLine = claudeBinDir.replace(/\//g, '\\')
+
+  try {
+    const cmd = `
+$binDir = "${pathLine}"
+$userPath = [Environment]::GetEnvironmentVariable("Path", "User")
+if ($userPath -and $userPath.Split(";") -contains $binDir) {
+  Write-Output "PATH already configured"
+} else {
+  $newPath = if ($userPath) { "$userPath;$binDir" } else { $binDir }
+  [Environment]::SetEnvironmentVariable("Path", $newPath, "User")
+  Write-Output "Added $binDir to user PATH"
+}`
+    await runPowerShell(win, cmd)
+  } catch {
+    progress(win, `Add ${claudeBinDir} to your PATH manually if needed`)
+  }
+}
+
 const ensureZshPath = async (win: BrowserWindow): Promise<void> => {
   const claudeBinDir = join(homedir(), '.local', 'bin')
   const zshrcPath = join(homedir(), '.zshrc')
@@ -81,6 +102,7 @@ export const installClaudeCode = async (win: BrowserWindow): Promise<void> => {
   } else {
     progress(win, 'Installing Claude Code via native installer...')
     await runPowerShell(win, 'irm https://claude.ai/install.ps1 | iex')
+    await ensureWindowsPath(win)
     progress(win, 'Claude Code installation complete!')
   }
 }
