@@ -1,5 +1,6 @@
 import { execFile } from 'child_process'
-import { platform } from 'os'
+import { homedir, platform } from 'os'
+import { join } from 'path'
 
 export interface EnvCheckResult {
   os: 'macos' | 'windows'
@@ -16,6 +17,17 @@ const execPromise = (cmd: string, args: string[]): Promise<string> =>
     })
   })
 
+const findClaude = async (): Promise<string> => {
+  // Try PATH first
+  const raw = await execPromise('claude', ['--version'])
+  if (raw) return raw
+
+  // Electron apps launched from Finder don't inherit shell PATH,
+  // so try the default install location directly
+  const localBin = join(homedir(), '.local', 'bin', 'claude')
+  return execPromise(localBin, ['--version'])
+}
+
 export const checkEnvironment = async (): Promise<EnvCheckResult> => {
   const os = platform() === 'win32' ? 'windows' : 'macos'
 
@@ -23,7 +35,7 @@ export const checkEnvironment = async (): Promise<EnvCheckResult> => {
   let claudeCodeInstalled = false
   let claudeCodeVersion: string | null = null
   try {
-    const raw = await execPromise('claude', ['--version'])
+    const raw = await findClaude()
     if (raw) {
       claudeCodeInstalled = true
       claudeCodeVersion = raw.split('\n')[0].trim()
